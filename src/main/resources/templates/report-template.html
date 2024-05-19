@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Reporte de Postulantes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h3 {
+            margin-top: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+        .icon {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+<h1>Reporte de Automoviles</h1>
+<br>
+<h3><i class="fas fa-user icon"></i>&nbsp; Listado de Automoviles</h3>
+<table>
+    <tr>
+        <th>Codigo de Automovil</th>
+        <th>Codigo de Marca</th>
+        <th>Codigo de Color</th>
+        <th>Año de fabricacion</th>
+        <th>Cilindrada</th>
+        <th>Numero de Puertas</th>
+        <th>Precio</th>
+
+    </tr>
+    <tr th:each="automoviles : ${listarAutomoviles}">
+        <td th:text="${automoviles.codAutomovil}"></td>
+        <td th:text="${automoviles.codMarca}"></td>
+        <td th:text="${automoviles.codColor}"></td>
+        <td th:text="${automoviles.anioFabricacion}"></td>
+        <td th:text="${automoviles.cilindrada}"></td>
+        <td th:text="${automoviles.numPuertas}"></td>
+        <td th:text="${automoviles.precio}"></td>
+    </tr>
+
+</table>
+<br>
+</body>
+</html>
